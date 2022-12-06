@@ -22,7 +22,7 @@ async function sendMail(providerOptions, settings, options) {
   });
 
   removeUndefined(options);
-  options.from = options.from || settings.defaultFrom;
+  options.from = settings.defaultFrom || options.from;
   options.replyTo = options.replyTo || settings.defaultReplyTo;
   const raw = await createMail(options);
 
